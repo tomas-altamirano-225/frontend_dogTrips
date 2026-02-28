@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "titulo": "Excursión Diaria",
+    "descripcion": "Un día lleno de emoción. Nuestro servicio incluye recogida, caminatas en la naturaleza, juegos y socialización en un área segura.",
+    "precio": "$65",
+    "viajes": "1 Viaje"
+  },
+  {
+    "id": 2,
+    "titulo": "Paquete Explorador (5 Viajes)",
+    "descripcion": "Ideal para padres de mascotas ocupados. Los créditos nunca caducan. Reserva cuando mejor te convenga.",
+    "precio": "$61/día",
+    "viajes": "5 Viajes"
+  },
+  {
+    "id": 3,
+    "titulo": "Paquete Aventura (10 Viajes)",
+    "descripcion": "Nuestro paquete más popular para mantener una rutina saludable y activa para tu perrito.",
+    "precio": "$58/día",
+    "viajes": "10 Viajes"
+  },
+  {
+    "id": 4,
+    "titulo": "Paquete Máster (20 Viajes)",
+    "descripcion": "El mayor ahorro para los perritos que aman salir todos los días. Máxima flexibilidad.",
+    "precio": "$50/día",
+    "viajes": "20 Viajes"
+  }
+]
