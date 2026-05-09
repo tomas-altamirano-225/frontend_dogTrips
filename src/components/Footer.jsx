@@ -1,21 +1,11 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import logoDogTrips from '../assets/logo.png';
 import { FaInstagram, FaTiktok, FaFacebookSquare } from 'react-icons/fa';
 
-export default function ContactoFooter() {
+export default function Footer() {
   return (
-    <footer id="contacto">
-      <div className="seccion-formulario">
-        <div className="formulario-contacto" data-aos="fade-up">
-          <h2>¿Listo para su primera aventura?</h2>
-          <form>
-            <input type="text" placeholder="Tu Nombre" required />
-            <input type="email" placeholder="Tu Email" required />
-            <input type="text" placeholder="Nombre de tu perrito" required />
-            <button type="button" className="btn-primario">Solicitar Información</button>
-          </form>
-        </div>
-      </div>
-
+    <footer>
       <div className="footer-inferior">
         <div className="footer-columna">
           <img src={logoDogTrips} alt="DogTrips Logo" className="footer-logo" />
@@ -24,10 +14,10 @@ export default function ContactoFooter() {
         
         <div className="footer-columna">
           <h3>NAVEGAR</h3>
-          <a href="#">Inicio</a>
-          <a href="#como-funciona">Cómo Funciona</a>
-          <a href="#servicios">Servicios y Tarifas</a>
-          <a href="#contacto">Contáctanos</a>
+          <Link to="/">Inicio</Link>
+          <Link to="/servicios">Servicios y Tarifas</Link>
+          <Link to="/meet-and-greet">Meet & Greet</Link>
+          <Link to="/login">Client Login</Link>
         </div>
 
         <div className="footer-columna">

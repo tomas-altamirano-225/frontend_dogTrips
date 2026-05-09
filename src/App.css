@@ -31,6 +31,10 @@ body {
   width: auto;
 }
 
+.links {
+  display: flex;
+}
+
 .links a {
   margin-left: 2.5rem;
   text-decoration: none;
@@ -44,6 +48,13 @@ body {
 
 .links a:hover {
   color: #e27d60;
+}
+
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .hero {
@@ -62,8 +73,18 @@ body {
 
 .hero-imagen {
   width: 100%;
+  /* Bordes redondeados más amigables (estilo PawTrips) */
   border-radius: 20px;
+  /* Sombra suave para dar profundidad 3D */
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  /* Transición suave por si agregamos hover a la imagen */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-imagen:hover {
+  /* Al pasar el ratón, la imagen "flota" ligeramente */
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .hero-texto {
@@ -95,13 +116,18 @@ body {
   font-size: 1.1rem;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  /* El transition suaviza todos los cambios de hover */
+  transition: all 0.3s ease;
+  /* Sombreado inicial cálido */
   box-shadow: 0 4px 15px rgba(226, 125, 96, 0.4);
 }
 
 .btn-primario:hover {
   background-color: #d86f50;
-  transform: translateY(-2px);
+  /* Efecto de elevación al hacer hover */
+  transform: translateY(-3px);
+  /* La sombra crece dando ilusión de cercanía */
+  box-shadow: 0 8px 25px rgba(226, 125, 96, 0.6);
 }
 
 .como-funciona {
@@ -169,14 +195,19 @@ body {
   padding: 2.5rem 2rem;
   border-radius: 15px;
   border: 1px solid #1b2f4940;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  /* Sombra tenue estática para destacar del fondo */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
+  /* Transición fluida para que el hover no sea brusco */
+  transition: all 0.3s ease;
 }
 
 .tarjeta-paquete:hover {
-  transform: translateY(-10px); 
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+  /* ¡Magia! Este translateY levanta la tarjeta en el eje Y */
+  transform: translateY(-8px); 
+  /* Sombra más dramática para el efecto de luz dinámica */
+  box-shadow: 0 15px 35px rgba(27, 47, 73, 0.15); 
   border-color: #1b2f49; 
 }
 
@@ -300,11 +331,36 @@ input {
 }
 
 @media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  .links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1b2f49;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .links.active {
+    display: flex;
+  }
+  .links a {
+    margin: 1rem 0;
+    display: block;
+  }
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 5%;
   }
   .galeria-paquetes {
+    grid-template-columns: 1fr;
+  }
+  .pasos-grid {
     grid-template-columns: 1fr;
   }
   .footer-inferior {
@@ -315,6 +371,16 @@ input {
     margin: 0 auto;
   }
   .redes-sociales {
+    justify-content: center;
+  }
+  .por-que-elegirnos {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pq-texto h2 {
+    justify-content: center;
+  }
+  .lista-beneficios li {
     justify-content: center;
   }
 }
