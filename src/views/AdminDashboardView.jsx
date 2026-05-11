@@ -31,12 +31,12 @@ export default function AdminDashboardView() {
       const headers = { 'Authorization': `Bearer ${token}` };
 
       const [resCont, resPaq, resUsu, resMasc, resPas, resPaqComp] = await Promise.all([
-        fetch('http://localhost:5000/api/contactos', { headers }),
-        fetch('http://localhost:5000/api/paquetes', { headers }),
-        fetch('http://localhost:5000/api/usuarios', { headers }),
-        fetch('http://localhost:5000/api/mascotas', { headers }),
-        fetch('http://localhost:5000/api/paseadores', { headers }),
-        fetch('http://localhost:5000/api/paquetes-comprados', { headers })
+        fetch(`${import.meta.env.VITE_API_URL}/api/contactos`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/api/paquetes`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/api/usuarios`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/api/mascotas`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/api/paseadores`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/api/paquetes-comprados`, { headers })
       ]);
 
       if (resCont.ok) setContactos(await resCont.json());
@@ -72,7 +72,7 @@ export default function AdminDashboardView() {
       }
     };
     if (body) options.body = JSON.stringify(body);
-    const res = await fetch(`http://localhost:5000${url}`, options);
+    const res = await fetch(`${import.meta.env.VITE_API_URL}${url}`, options);
     if (!res.ok) throw new Error('Error en petición');
     return await res.json();
   };

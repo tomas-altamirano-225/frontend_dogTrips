@@ -13,7 +13,7 @@ export default function RegistroView() {
         setMensaje('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/usuarios/registrar', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/usuarios/registrar`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

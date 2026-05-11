@@ -27,8 +27,8 @@ export default function ClientDashboardView() {
       };
 
       const [resMascotas, resReservas] = await Promise.all([
-        fetch('http://localhost:5000/api/mascotas', options),
-        fetch('http://localhost:5000/api/reservas', options)
+        fetch(`${import.meta.env.VITE_API_URL}/api/mascotas`, options),
+        fetch(`${import.meta.env.VITE_API_URL}/api/reservas`, options)
       ]);
 
       if (resMascotas.ok) {
