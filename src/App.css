@@ -297,6 +297,74 @@ input, select {
   border: 1px solid #1b2f4920;
 }
 
+/* Clases Premium y Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.1);
+}
+
+.tarjeta-paquete-premium {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow:  10px 10px 20px #e6e6e6, -10px -10px 20px #ffffff;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid #1b2f49;
+  overflow: hidden;
+  position: relative;
+}
+
+.tarjeta-paquete-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #e27d60, transparent);
+  transition: left 0.5s ease;
+}
+
+.tarjeta-paquete-premium:hover {
+  transform: translateY(-8px);
+  box-shadow:  15px 15px 30px #d9d9d9, -15px -15px 30px #ffffff;
+}
+
+.tarjeta-paquete-premium:hover::before {
+  left: 100%;
+}
+
+.btn-animado {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animado::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.btn-animado:hover::after {
+  transform: translateX(0);
+}
+
 .form-section h3 {
   color: #1b2f49;
   margin-bottom: 0.5rem;
